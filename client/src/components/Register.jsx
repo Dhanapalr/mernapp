@@ -1,5 +1,6 @@
 import axios from 'axios'
 
+
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import {Formik,Field,ErrorMessage, Form} from 'formik'
@@ -24,7 +25,7 @@ const onSubmit =(async (values,props)=>{
  
      localStorage.setItem('token',data.headers['x-auth-token'])
      if(data.status==200) toast.success('Registered Successfully')
-    window.location="/home"
+     window.location.href="/home"
    
    } catch (ex) {
     

@@ -1,6 +1,7 @@
 import {Formik,Form,ErrorMessage,Field} from 'formik'
 import axios from 'axios'
 import * as yup from 'yup'
+import {Redirect} from 'react-router-dom'
 
 
 const initialValues={
@@ -22,7 +23,7 @@ const onsubmit= async(values,props)=>{
     
       const data=  await axios.post('/api/user/login',values)
       localStorage.setItem('token',data.headers['x-auth-token'])
-      window.location="/home"
+     window.location.href="/home"
     } catch (ex) {
         props.setFieldError('email',ex.response.data)
     }
