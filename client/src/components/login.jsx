@@ -50,7 +50,7 @@ const LoginForm = () => {
  </div>
  
           <button className="btn-primary">Login</button>{"    "}
-          { <Link to="/register" className="stretched-link text-danger"> New User ?</Link>}
+          { <Link to="/register" className="alert-link text-danger"> New User ?</Link>}
            
             </Form>}
            
