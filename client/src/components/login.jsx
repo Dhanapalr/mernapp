@@ -1,7 +1,7 @@
 import {Formik,Form,ErrorMessage,Field} from 'formik'
 import axios from 'axios'
 import * as yup from 'yup'
-import {Redirect} from 'react-router-dom'
+import {Link, Redirect} from 'react-router-dom'
 
 
 const initialValues={
@@ -49,15 +49,18 @@ const LoginForm = () => {
                 <ErrorMessage name="password">{msg=><div className="alert alert-danger">{msg}</div>}</ErrorMessage>
  </div>
  
-          <button className="btn-primary">Login</button>
- 
+          <button className="btn-primary">Login</button>{"    "}
+          { <Link to="/register" className="stretched-link text-danger"> New User ?</Link>}
+           
             </Form>}
+           
     }
 
 
 
 
         </Formik>
+        
 
      );
 }
