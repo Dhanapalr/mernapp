@@ -3,6 +3,7 @@ const cors=require('cors')
 const customer=require('./routes/customer')
 const user=require('./routes/user')
 const express = require('express')
+const path= require('path')
 const app=express();
 app.use(express.json())
 require('./startup/check')();
@@ -19,7 +20,7 @@ app.use('/api/customer',customer)
 if (process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'staging') {
     app.use(express.static('client/build'));
     app.get('*', (req, res) => {
-      res.sendFile(path.join(__dirname + '/client/build/index.html'));
+      res.sendFile(path.resolve(__dirname + '/client/build/index.html'));
     });
   }
 
